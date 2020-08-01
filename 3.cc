@@ -22,9 +22,14 @@ int main() {
         int a,b;
         cin >> a >> b;
         p.push_back(Classes(a, true));
-        p.push_back(Classes(a, true));
-
-
+        p.push_back(Classes(b, false));
+    }
+    sort(p.begin(), p.end());
+    int cnt = 0, k = 0;
+    for (auto classes : p) {
+        if (Classes.begin) {
+            
+        }
     }
  
 }
