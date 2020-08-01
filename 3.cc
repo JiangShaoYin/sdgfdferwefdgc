@@ -8,7 +8,7 @@ strcut Classes {
     }
     bool operator<(Classes& rhs) {
         if (this->time == rhs.time) {
-            return this->end == rhs.end
+            return this->begin < rhs.begin
         }
         return this->time < rhs.time;
     }
