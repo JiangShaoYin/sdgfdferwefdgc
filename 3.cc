@@ -28,8 +28,12 @@ int main() {
     int cnt = 0, k = 0;
     for (auto classes : p) {
         if (Classes.begin) {
-            
+            cnt++;
+            k = max(k, cnt);
+        } else {
+            cnt--;
         }
     }
+    return k;
  
 }
