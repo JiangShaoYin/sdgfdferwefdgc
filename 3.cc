@@ -2,7 +2,12 @@
 using namespace std;
 strcut Classes {
     int begin, end;
-    Classes()
+    Classes(int a, int b) {
+        begin = a; end = b;
+    }
+    bool operator<(Classes& rhs) {
+        return this->begin < rhs.begin;
+    }
 }
 
 int main() {
