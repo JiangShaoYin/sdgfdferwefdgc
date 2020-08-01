@@ -7,10 +7,10 @@ strcut Classes {
         time = a; begin = b;
     }
     bool operator<(Classes& rhs) {
-        if (this->begin == rhs.begin) {
+        if (this->time == rhs.time) {
             return this->end == rhs.end
         }
-        return this->begin < rhs.begin;
+        return this->time < rhs.time;
     }
 };
 
