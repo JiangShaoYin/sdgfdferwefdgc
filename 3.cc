@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-strcut Classes {
+struct Classes {
     int time;
     bool begin = true;
     Classes(int a, bool b) {
@@ -8,7 +8,7 @@ strcut Classes {
     }
     bool operator<(Classes& rhs) {
         if (this->time == rhs.time) { // 让结束时间排在开始时间前面
-            return this->begin < rhs.begin
+            return this->begin < rhs.begin;
         }
         return this->time < rhs.time;
     }
@@ -27,13 +27,13 @@ int main() {
     sort(p.begin(), p.end());
     int cnt = 0, k = 0;
     for (auto classes : p) {
-        if (Classes.begin) {
+        if (classes.begin) {
             cnt++;
             k = max(k, cnt);
         } else {
             cnt--;
         }
     }
-    return k;
- 
+    cout<< k << endl;
+    return 0;
 }
