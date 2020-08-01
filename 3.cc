@@ -1,9 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 strcut Classes {
-    int begin, end;
-    Classes(int a, int b) {
-        begin = a; end = b;
+    int time;
+    bool begin = true;
+    Classes(int a, bool b) {
+        time = a; begin = b;
     }
     bool operator<(Classes& rhs) {
         if (this->begin == rhs.begin) {
@@ -21,7 +22,7 @@ int main() {
         int a,b;
         cin >> a >> b;
         p.push_back(Classes(a, b));
-        
+
     }
  
 }
