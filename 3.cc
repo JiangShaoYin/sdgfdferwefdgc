@@ -7,7 +7,7 @@ strcut Classes {
         time = a; begin = b;
     }
     bool operator<(Classes& rhs) {
-        if (this->time == rhs.time) {
+        if (this->time == rhs.time) { // 让结束时间排在开始时间前面
             return this->begin < rhs.begin
         }
         return this->time < rhs.time;
@@ -21,7 +21,9 @@ int main() {
     for (int i = 0; i < n; i++) {
         int a,b;
         cin >> a >> b;
-        p.push_back(Classes(a, b));
+        p.push_back(Classes(a, true));
+        p.push_back(Classes(a, true));
+
 
     }
  
