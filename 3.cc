@@ -20,7 +20,8 @@ int main() {
     for (int i = 0; i < n; i++) {
         int a,b;
         cin >> a >> b;
-        p.push_back(Classes())
+        p.push_back(Classes(a, b));
+        
     }
  
 }
