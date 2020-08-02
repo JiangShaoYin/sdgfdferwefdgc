@@ -15,12 +15,12 @@ bool InSet(vector<pair<set<int>, int> > & vec, int t) {
 int main() {
 	int n;
 	cin >> n;
-	map<int, vector<pair<set<int>, int> > >  mp;
+	map<pair<int, int>, vector<pair<set<int>, int> > >  mp;
 	int cnt = 0;
 	for (int i = 0; i < n; i++) {
 		int a, b, c, d, e, f;
 		cin >> a >> b >> c >> d >> e >> f;
-
+        if (a > b) swap(a, b);
 		int t = 1000 * c + 100 * d + 10 * e + f;
 		if (mp.count(10 * a + b) && InSet(mp[10 * a + b], t) || mp.count(10 * b + a) && InSet(mp[10 * b + a], t)) { // 重复筛子
 			continue;
@@ -39,7 +39,7 @@ int main() {
 		// st.insert(1000 * f + 100 * e + 10 * c + d);
 
 		mp[10 * a + b].push_back({ st, 1 });
-        mp[10 * b + c].push_back({ st, 1 });
+        // mp[10 * b + c].push_back({ st, 1 });
 		cnt++;
 	}
 	vector<int> res;
