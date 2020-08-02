@@ -5,5 +5,8 @@ const int N =
 
 
 int main() {
+    int n;
+     cin >> n;
+     
 
 }
