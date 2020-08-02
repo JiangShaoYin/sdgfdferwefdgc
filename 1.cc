@@ -23,7 +23,7 @@ int main() {
         if (a > b) swap(a, b);
       
         int t = 1000 * c + 100 * d + 10 * e + f;
-        if (mp.count(10 * a + b) && InSet(mp[10 * a + b], t))) { // 重复筛子
+        if (mp.count(10 * a + b) && InSet(mp[10 * a + b], t)) { // 重复筛子
             continue;
         }
         set<int> st;
