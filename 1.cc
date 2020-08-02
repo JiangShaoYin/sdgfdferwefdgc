@@ -6,7 +6,7 @@ const int N =
 
 int main() {
     int n;
-     cin >> n;
-     
+    cin >> n;
+    map<int, vector<int>>
 
 }
