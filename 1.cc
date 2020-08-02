@@ -12,9 +12,7 @@ int main() {
         if (a > b) swap(a, b);
       
         int t = 1000 * c + 100 * d + 10 * e + f;
-
         if (mp.count(10 * a + b) && mp[10 * a + b].count(t)) { // 重复筛子
-            ans[10 * a + b]++;
             continue;
         }
 
