@@ -11,8 +11,11 @@ bool InSet(vector<pair<set<int>, int> > & vec, int t) {
 	return false;
 }
 
-bool Inkey(int a, int b) {
-    
+bool Inkey(map<pair<int, int>, vector<pair<set<int>, int> > >& mp, int a, int b) {
+    if (mp.count(b) ||mp.count(a)) {
+        return true;
+    }
+    return false;
 }
 
 int main() {
@@ -25,7 +28,7 @@ int main() {
 		cin >> a >> b >> c >> d >> e >> f;
         if (a > b) swap(a, b);
 		int t = 1000 * c + 100 * d + 10 * e + f;
-		if (Inkey(10 * a + b) && InSet(mp[{10 * a + b, 10 * b + a}], t)) { // 重复筛子
+		if (Inkey(mp, 10 * b + a, 10 * a + b) && InSet(mp[{10 * a + b, 10 * b + a}], t)) { // 重复筛子
 			continue;
 		}
 		set<int> st;
