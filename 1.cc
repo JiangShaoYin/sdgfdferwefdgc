@@ -10,6 +10,7 @@ int main() {
         int a,b,c,d,e,f;
         cin >> a >> b >> c >> d >> e >> f;
         if (a > b) swap(a, b);
+        
         mp[10 * a + b].insert(1000 * c + 100 * d + 10 * e + f);
         mp[10 * a + b].insert(1000 * c + 100 * d + 10 * f + e);
 
@@ -18,6 +19,9 @@ int main() {
 
         mp[10 * a + b].insert(1000 * e + 100 * f + 10 * c + d);
         mp[10 * a + b].insert(1000 * e + 100 * f + 10 * d + c);
+
+        mp[10 * a + b].insert(1000 * f + 100 * e + 10 * c + d);
+        mp[10 * a + b].insert(1000 * f + 100 * e + 10 * d + c);
 
         
         if (mp.count(10 * a + b) || mp.count(10 * b + a)) {
