@@ -1,39 +1,54 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool InSet(vector<pair<set<int>, int> > & vec, int t) {
+    for (auto& st : vec) {
+        if (st.first.count(t)) {
+            return true;
+            st.second++;
+        }
+    }
+    return false;
+}
 
 
 int main() {
     int n;
     cin >> n;
-    map<int, set<int>>  mp;
+    map<int, vector<pair<set<int>, int> > >  mp;
     int cnt = 0;
-    map<int, int> ans;
     for (int i = 0; i < n; i++) {
         int a,b,c,d,e,f;
         cin >> a >> b >> c >> d >> e >> f;
         if (a > b) swap(a, b);
       
         int t = 1000 * c + 100 * d + 10 * e + f;
-        if (mp.count(10 * a + b) && mp[10 * a + b].count(t)) { // 重复筛子
+        if (mp.count(10 * a + b) && InSet(mp[10 * a + b], t))) { // 重复筛子
             continue;
         }
+        set<int> st;
+        st.insert(1000 * c + 100 * d + 10 * e + f);
+        st.insert(1000 * c + 100 * d + 10 * f + e);
 
-        mp[10 * a + b].insert(1000 * c + 100 * d + 10 * e + f);
-        mp[10 * a + b].insert(1000 * c + 100 * d + 10 * f + e);
+        st.insert(1000 * d + 100 * c + 10 * f + e);
+        st.insert(1000 * d + 100 * c + 10 * e + f);
 
-        mp[10 * a + b].insert(1000 * d + 100 * c + 10 * f + e);
-        mp[10 * a + b].insert(1000 * d + 100 * c + 10 * e + f);
+        st.insert(1000 * e + 100 * f + 10 * c + d);
+        st.insert(1000 * e + 100 * f + 10 * d + c);
 
-        mp[10 * a + b].insert(1000 * e + 100 * f + 10 * c + d);
-        mp[10 * a + b].insert(1000 * e + 100 * f + 10 * d + c);
-
-        mp[10 * a + b].insert(1000 * f + 100 * e + 10 * c + d);
-        mp[10 * a + b].insert(1000 * f + 100 * e + 10 * d + c);
+        st.insert(1000 * f + 100 * e + 10 * c + d);
+        st.insert(1000 * f + 100 * e + 10 * d + c);
+        mp[10 * a + b].push_back(st);
+        cnt++;
     }
     vector<int> res;
-    for (auto& p : ans) {
-        res.push_back();
+    for (auto& p : mp) {
+        for(auto & vec: p.second) { // vector<pair<set<int>, int> > 
+            res.push_back(vec.second);
+        }
     }
     sort(res.begin(), res.end());
-    cout << ans.size() << endl;
+    cout << cnt << endl;
     for(int i = res.size() - 1; i >= 1; i--) {
         cout << res[i] << " ";
     }
