@@ -39,6 +39,7 @@ int main() {
 		// st.insert(1000 * f + 100 * e + 10 * c + d);
 
 		mp[10 * a + b].push_back({ st, 1 });
+        mp[10 * b + c].push_back({ st, 1 });
 		cnt++;
 	}
 	vector<int> res;
