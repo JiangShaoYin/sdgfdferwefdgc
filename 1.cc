@@ -22,21 +22,21 @@ int main() {
 		cin >> a >> b >> c >> d >> e >> f;
 
 		int t = 1000 * c + 100 * d + 10 * e + f;
-		if (mp.count(10 * a + b) && InSet(mp[10 * a + b], t)) { // 重复筛子
+		if (mp.count(10 * a + b) && InSet(mp[10 * a + b], t) || mp.count(10 * b + a) && InSet(mp[10 * b + a], t)) { // 重复筛子
 			continue;
 		}
 		set<int> st;
 		st.insert(1000 * c + 100 * d + 10 * e + f);
-		st.insert(1000 * c + 100 * d + 10 * f + e);
+		// st.insert(1000 * c + 100 * d + 10 * f + e);
 
 		st.insert(1000 * d + 100 * c + 10 * f + e);
-		st.insert(1000 * d + 100 * c + 10 * e + f);
+		// st.insert(1000 * d + 100 * c + 10 * e + f);
 
 		st.insert(1000 * e + 100 * f + 10 * c + d);
-		st.insert(1000 * e + 100 * f + 10 * d + c);
+		// st.insert(1000 * e + 100 * f + 10 * d + c);
 
-		st.insert(1000 * f + 100 * e + 10 * c + d);
 		st.insert(1000 * f + 100 * e + 10 * d + c);
+		// st.insert(1000 * f + 100 * e + 10 * c + d);
 
 		mp[10 * a + b].push_back({ st, 1 });
 		cnt++;
