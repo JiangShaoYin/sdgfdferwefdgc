@@ -15,6 +15,10 @@ int main() {
 
         mp[10 * a + b].insert(1000 * d + 100 * c + 10 * f + e);
         mp[10 * a + b].insert(1000 * d + 100 * c + 10 * e + f);
+
+        mp[10 * a + b].insert(1000 * e + 100 * f + 10 * c + d);
+        mp[10 * a + b].insert(1000 * e + 100 * f + 10 * d + c);
+
         
         if (mp.count(10 * a + b) || mp.count(10 * b + a)) {
             int t = 1000 * c + 100 * d + 10 * e + f;
