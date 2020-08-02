@@ -34,7 +34,9 @@ int main() {
     for (auto& p : ans) {
         res.push_back();
     }
-    sort(res.begin(),res.end());
-    for(auto it =)
+    sort(res.begin(), res.end());
+    for(int i = res.size() - 1; i >= 0; i--) {
+        cout << res[i] 
+    }
 
 }
