@@ -35,8 +35,10 @@ int main() {
         res.push_back();
     }
     sort(res.begin(), res.end());
-    for(int i = res.size() - 1; i >= 0; i--) {
-        cout << res[i] 
+    cout << ans.size() << endl;
+    for(int i = res.size() - 1; i >= 1; i--) {
+        cout << res[i] << " ";
     }
+    cout<< res[0] << endl;
 
 }
